@@ -23,7 +23,8 @@ ok =
   (have_library('opengl32') &&
    have_library('glu32')) ||
   (have_library('GL',   'glVertex3d') &&
-   have_library('GLU',  'gluLookAt'))
+   have_library('GLU',  'gluLookAt')) ||
+  (have_framework('OpenGL') && have_framework('GLUT') && have_framework('Cocoa'))
 
 ok &&=
   (have_header('GL/gl.h') && have_header('GL/glu.h')) ||
